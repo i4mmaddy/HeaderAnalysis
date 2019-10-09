@@ -1,0 +1,35 @@
+import requests
+import sys
+
+score = 100
+url = sys.argv[1]
+print('request made to .....'+ url +'...' )
+test= 0
+
+
+try:
+ response = requests.get(url)
+ test = 1
+except requests.exceptions.RequestException as e:
+ print("Check your input ")
+
+if test == 1:
+ try:
+    demo = response.headers['x-xss-protection']
+    print("---XSS protection Looks fine---")  
+ except KeyError:
+   print("----xss protection header is not there---- ")
+   score = score - 20
+
+ try:
+    demo = response.headers['X-Frame-Options']
+    print("---clickjacking test passed---")  
+ except KeyError:
+   print("Looks like vulnerble to clickjacking ")
+   score = score - 20
+
+
+
+
+ print("###your score for headers analysis is " + str(score))
+
