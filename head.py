@@ -28,6 +28,13 @@ if test == 1:
    print("Looks like vulnerble to clickjacking ")
    score = score - 20
 
+   
+    try:
+    demo = response.headers['content-security-policy']
+    print("---CSP passed---")  
+ except KeyError:
+   print("Looks like dont have Content security policy header ")
+   score = score - 5
 
 
 
