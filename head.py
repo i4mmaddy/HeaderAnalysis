@@ -35,6 +35,18 @@ if test == 1:
  except KeyError:
    print("Looks like dont have Content security policy header ")
    score = score - 5
+   
+   
+       try:
+    demo = response.headers['Access-Control-Allow-Origin']
+    if demo == '*':
+      print("---Misconfig in CORS headers---")
+      score = score-5
+    else:
+      print("passed in CORS test")
+ except KeyError:
+   print("Looks like dont have Content security policy header ")
+   score = score - 5
 
 
 
