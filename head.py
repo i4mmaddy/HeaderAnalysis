@@ -45,7 +45,7 @@ if test == 1:
     else:
       print("passed in CORS test")
  except KeyError:
-   print("Looks like dont have CORS header | good to use it! ")
+   print("Looks like dont have CORS header | good to use it depends on your application need! ") //proper validation neeeded
    score = score - 5
 
 
