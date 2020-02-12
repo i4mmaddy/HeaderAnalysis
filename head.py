@@ -19,7 +19,7 @@ if test == 1:
     print("---XSS protection Looks fine---")  
  except KeyError:
    print("----xss protection header is not there---- ")
-   score = score - 20
+   score = score - 19
 
  try:
     demo = response.headers['X-Frame-Options']
