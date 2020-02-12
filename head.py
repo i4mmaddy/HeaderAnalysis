@@ -26,7 +26,7 @@ if test == 1:
     print("---clickjacking test passed---")  
  except KeyError:
    print("Looks like vulnerble to clickjacking ")
-   score = score - 20
+   score = score - 19
 
    
     try:
